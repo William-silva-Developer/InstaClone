@@ -1,5 +1,7 @@
 import 'react-native-gesture-handler';
-import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
+import { NavigationContainer} from '@react-navigation/native';
+
 import Routes from './src/routes/Routes';
 
 
@@ -9,19 +11,12 @@ import Routes from './src/routes/Routes';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <NavigationContainer>
       <StatusBar barStyle='default' />
 
       <Routes />
       
-    </SafeAreaView>
+      </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    
-  },
-});

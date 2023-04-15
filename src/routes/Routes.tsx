@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavigationContainer} from '@react-navigation/native';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../pages/home/Home';
 import Feed from '../pages/feed/Feed';
@@ -10,28 +10,24 @@ import Feed from '../pages/feed/Feed';
 
 export default function Routes() {
 
-  const Stack = createNativeStackNavigator();
+  const { Navigator, Screen } = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
+      <Navigator>
       
-      <Stack.Navigator>
-      
-        <Stack.Screen
+        <Screen
         name='Home'
         component={Home}
         options={{headerShown: false}}
         />
         
         
-        <Stack.Screen 
+        <Screen 
         name='Feed'
         component={Feed}
         options={{headerShown: false}}
         />
 
-      </Stack.Navigator>
-
-    </NavigationContainer>
+      </Navigator>
   )
 }
